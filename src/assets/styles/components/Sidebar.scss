@@ -1,0 +1,118 @@
+.left-nav {
+    color: #fff;
+    height: 88.2vh ;
+    width: 150px;
+    position: fixed;
+    z-index: 5;
+    top: 4.9rem;
+}
+.mz-step-indicator span{
+	width: 30px;
+    height: 30px;
+    display: inline-block;
+    padding: 2px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    font-weight: 600;
+}
+.nav-header {
+    padding: 10px 10px 40px;
+    position: relative;
+
+    .active {
+
+        span {
+            background-color: #FFD100;
+            color: black;
+            border: none;
+        }
+    }
+    .checked {
+
+        span {
+            background: linear-gradient(90deg, #58D300 -1.02%, #5FD700 50.3%, #58D500 102.04%);
+            border: none;
+        }
+    }
+}
+.nav-header:after{
+	content: "";
+	width: 2px;
+	height: 40px;
+	border-radius: 2px;
+	background-color: #fff;
+	position: absolute;
+}
+.checked-header:after {
+    background-color: #0BEB7E;
+}
+.nav-header:last-child:after{
+	display: none;
+}
+.nav-header.is-current .mz-step-indicator span{
+	background: #ffd100;
+    border-color: #ffd100;
+    color: #000;
+}
+.nav-header.is-complete .mz-step-indicator span{
+	background: #75ae52;
+    border-color: #75ae52;
+    color: #fff;
+}
+.nav-header > div {
+    padding: 3px 0;
+}
+#reciept {
+    padding: 0;
+}
+
+
+@media only screen and(max-width:1980px) {
+    .left-nav {
+        height: 92vh;
+    }
+    
+}
+
+@media screen and (max-width:1024px) {
+    .left-nav {
+        height: 85vh;
+        top: 7.2rem;
+    }
+    
+}
+
+@media  only screen and (max-width:992px) {
+    .left-nav {
+        height: 146vh ;
+    }
+    
+}
+
+@media only screen and (max-width:768px) {
+    .left-nav {
+        height: 130px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        display: none;
+    }
+    .nav-header {
+	    display: inline-block;
+	    width: 100%;
+	    vertical-align: middle;
+    	padding: 5px 10px;
+	}
+	.nav-header:after {
+	    content: "";
+	    width: 20px;
+	    height: 2px;
+	    border-radius: 2px;
+	    position: absolute;
+	    right: -8px;
+	    top: 50%;
+	}	
+    
+}

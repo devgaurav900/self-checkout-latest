@@ -1,0 +1,333 @@
+.payment{
+   width: 99%;
+   background: #f7f7f7;
+   border: 2px solid #989898;
+   margin-top:0px;
+   margin-left: 1px;
+}
+
+.title-pay-done{
+    letter-spacing: 0;
+    min-height: 59px;
+    margin-left: 38%;
+    margin-top: 10px;
+}
+.bgl-logo-pay-done{
+    height: 67px;
+    left: 83%;
+    object-fit: cover;
+    position: fixed;
+    top: 10px;
+    width: 232px;
+    z-index: 1;
+}
+.bgl-logo-pay-done-down-img{
+    background-color:  #f2ead8;;
+    height: 625px;
+    width: 1370px;
+    margin-left: 9.5%;
+    margin-top: -15px;
+}
+
+.BackGround-pay{
+    position: absolute;
+      margin-top: -15px;
+      margin-left: 10px;
+      width: 139px;
+      background-color:#333333;
+      height: 625px;
+  }
+  .StatusTick-pay {
+    display: flex;
+    height: 49px;
+    min-width: 49px;
+    padding: 50px 15.5px;
+    margin-left: 35px;
+  }
+  .vector-pay {
+    height: 49px;
+    width: 49px;
+    margin-top: -7px;
+    margin-left: -5px;
+  }
+  .article-list-pay {
+   margin-top: 11rem;
+   margin-left: 2rem;
+    position: fixed;
+    color: #fff;
+    top: 0;
+    z-index: 1;
+  }
+ .line-1-pay {
+   margin-top: 1.7rem;
+   height: 50px;
+   position: fixed;
+   margin-left: -2.3rem;
+  }
+  .line-2-pay {
+    margin-top: 1.7rem;
+    height: 50px;
+    position: fixed;
+    margin-left: -0.8rem;
+   }
+   .line-3-pay{
+    position: fixed;
+       margin-top: 1.7rem;
+       margin-left: -2.7rem;
+       height: 50px;
+   }
+ .number-1-pay{
+     margin-top: 4.5rem;
+     margin-left: 2.8rem;
+ }
+ .remove-tag-pay {
+     margin-left: -1.8rem;
+ }
+ .pay-list-pay{
+     color: #ffff;
+     margin-left: 3.5rem;
+ }
+ .pay-list-receipt{
+    color: #ffff;
+    margin-left: 3rem;
+ }
+ .subtract{
+    box-sizing: border-box;
+    position: absolute;
+    width: 1206px;
+    height: 406px;
+    left: 250px;
+    top: 110px;
+    background: linear-gradient(84.12deg, #FFAF13 0%, #FFD065 100%);
+    border: 3px solid #FFFFFF;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.90);
+ }
+ .total-amount{
+    position: absolute;
+    width: 226px;
+    height: 46px;
+    left: 13px;
+    top: 304px;
+    font-family: 'Barlow';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 38.0408px;
+    line-height: 46px;
+    color: #333333;
+ }
+ .Paymenthasbeenrecivedfrom{
+    position: absolute;
+    width: 439px;
+    height: 37px;
+    left: 13px;
+    top: 159px;
+    font-family: 'Barlow';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30.9405px;
+    line-height: 37px;
+    color: #333333;
+    
+ }
+ .AED{
+   margin-bottom: -40px;
+   width: 77px;
+   height: 49px;
+   margin-top: 55px;
+   margin-left: 1093px;
+   font-family: 'Barlow';
+   font-style: normal;
+   font-weight: 700;
+   font-size: 40.8351px;
+   line-height: 47px;
+   color: #333333;
+ }
+ .AED1{
+    position: absolute;
+    width: 77px;
+    height: 49px;
+    left: 1090px;
+    top: 213px;
+    font-family: 'Barlow';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40.8351px;
+    line-height: 49px;
+    color: #333333;
+ }
+ .pricedata{
+    position: absolute;
+    width: 116px;
+    height: 49px;
+    left: 900px;
+    top: 55px;
+    font-family: 'Barlow';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40.8351px;
+    line-height: 49px;
+    color: #333333;
+ }
+ .price2{
+   position: absolute;
+   width: 116px;
+   height: 49px;
+   left: 900px;
+   top: 119px;
+   font-family: 'Barlow';
+   font-style: normal;
+   font-weight: 700;
+   font-size: 40.8351px;
+   line-height: 49px;
+   color: #333333;
+}
+ .visa-img-pay-done{
+    position: absolute;
+    left: 516px;
+    top: 55px;
+    filter: drop-shadow(0px 4.60606px 4.60606px rgba(0, 0, 0, 0.25));
+ }
+ .visa-img-pay-done img{
+    width: 71px;
+ }
+ .master-img-pay-done{
+    position: absolute;
+    left: 516px;
+    top: 121px;
+    filter: drop-shadow(0px 4.60606px 4.60606px rgba(0, 0, 0, 0.25));
+ }
+ .master-img-pay-done img{
+    width: 71px;
+ }
+ .No{
+    /* position: absolute; */
+    width: 303px;
+    height: 49px;
+    margin-left: 19px;
+    margin-top: -119px;
+    font-family: 'Barlow';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 31px;
+    line-height: 49px;
+    color: #333333;
+ }
+ .No1{
+   /* position: absolute; */
+   width: 303px;
+   height: 49px;
+   margin-left: 67px;
+   margin-top: 19px;
+   font-family: 'Barlow';
+   font-style: normal;
+   font-weight: 600;
+   font-size: 31px;
+   line-height: 49px;
+   color: #333333;
+}
+ /* .No::before{
+    content: "No:-";
+ } */
+ .AED2{
+    position: absolute;
+    
+    height: 48px;
+    left: 12px;
+    top: 217px;
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 42px;
+    line-height: 48px;
+    color: #333333;
+ }
+ .Final-price{
+    position: absolute;
+    width: 116px;
+    height: 49px;
+    left: 900px;
+    top: 304px;
+    font-family: 'Barlow';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40.8351px;
+    line-height: 49px;
+    color: #333333;
+ }
+ .Final-price-ade{
+    position: absolute;
+    width: 77px;
+    height: 49px;
+    left: 1090px;
+    top: 301px;
+    font-family: 'Barlow';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40.8351px;
+    line-height: 49px;
+    color: #333333;
+ }
+ .due-price{
+    position: absolute;
+    width: 116px;
+    height: 49px;
+    left: 1010px;
+    top: 217px;
+    font-family: 'Barlow';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40.8351px;
+    line-height: 49px;
+    color: #333333;
+ }
+ .check-mark-verified{
+     animation: subodh 0.5s infinite;
+    box-sizing: border-box;
+    position: absolute;
+    left: 46.58%;
+    right: 38.26%;
+    top: 93.44%;
+    bottom: 37.5%;
+    border: 3px solid #FFFFFF;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 51.5px;
+ }
+ .success-dot {
+    background-color: rgb(3, 3, 3);
+    height: 1px;
+    width: 1161px;
+    margin-left: 17px;
+    margin-top: 118px;
+  }
+ @keyframes subodh{
+     from{
+         transform: scale(1);
+         opacity: 1;
+     }
+     50%{
+         transform: scale(0.75);
+         opacity: 0.25;
+     }
+     to{
+         transform: scale(1);
+         opacity: 1;
+     }
+
+ }
+ .YourPaymentwasSuccessful{
+    position: absolute;
+    width: 410px;
+    height: 37px;
+    left: 1057px;
+    top: 530px;
+    
+    font-family: 'Barlow';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30.9405px;
+    line-height: 37px;
+    
+    color: #00C704;
+    
+    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+ }

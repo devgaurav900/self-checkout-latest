@@ -1,0 +1,89 @@
+{
+    "articles": [
+        {
+            "id": 3893434334,
+            "name": "T-Shirt",
+            "brand": "Roadster",
+            "info": "Men White Pure Cotton T-shirt",
+            "description": "",
+            "price": 300,
+            "discount": 10,
+            "tax":5,
+            "thumbnail": "../assets/images/checkout/t-shirt.png"
+        },
+        {
+            "id": 3893434335,
+            "name": "Jeans",
+            "brand": "Calving Klein Jeans",
+            "info": "Men Blue Skinny fit Heavy Stretchable Jeans",
+            "description": "",
+            "price": 62.00,
+            "discount": 20,
+            "tax":5
+        },
+        {
+            "id": 3893434336,
+            "name": "Track pant",
+            "brand": "Endeavour",
+            "info": "Men White Pure Cotton T-shirt",
+            "description": "",
+            "price": 200,
+            "discount": 25,
+            "tax":5
+        },
+        {
+            "id": 3893434337,
+            "name": "Barakath",
+            "brand": "Barakath Dubai",
+            "info": "Women Barakath Dubai",
+            "price": 230,
+            "discount": 15,
+            "tax":5
+        },
+        {
+            "id": 3893434338,
+            "name": "T-Shirt",
+            "brand": "Barakath Dubai",
+            "info": "Women Barakath Dubai",
+            "price": 500,
+            "discount": 50,
+            "tax":5
+        },
+        {
+            "id": 3893434339,
+            "name": "Jeans",
+            "brand": "Barakath Dubai",
+            "info": "Women Barakath Dubai",
+            "price": 350,
+            "discount": 10,
+            "tax":5
+        },
+        {
+            "id": 3893434340,
+            "name": "Barakath",
+            "brand": "Barakath Dubai",
+            "info": "Women Barakath Dubai",
+            "price": 1000,
+            "discount": 10,
+            "tax":5
+        },
+        {
+            "id": 3893434341,
+            "name": "Barakath",
+            "brand": "Barakath Dubai",
+            "info": "Women Barakath Dubai",
+            "price": 100,
+            "discount": 10,
+            "tax":5
+        },
+        {
+            "id": 3893434342,
+            "name": "Barakath",
+            "brand": "Barakath Dubai",
+            "info": "Women Barakath Dubai",
+            "price": 1600,
+            "discount": 30,
+            "tax":5
+        }
+    ]
+}

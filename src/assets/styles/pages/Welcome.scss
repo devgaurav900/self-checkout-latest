@@ -1,0 +1,821 @@
+/* Wide Desktop Screens */
+.Welcome {
+  width: 100%;
+  height: 100vh;
+  background-color: #fdd106;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+
+  .column1 {
+    flex: 1 1 54%;
+    padding-left: 6.319444vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 5;
+
+    .profile-img {
+      height: 8.984375vh;
+      width: 8.984375vh;
+      border-radius: 50%;
+      margin-top: 3.90625vh;
+      cursor: pointer;
+
+      img {
+        height: inherit;
+        width: inherit;
+        border-radius: 50%;
+      }
+    }
+
+    .instruction {
+      margin-top: 5.46875vh;
+      font-family: "Work Sans";
+      font-style: normal;
+      font-weight: 500;
+
+      .arabic {
+        font-size: 4.6875vh;
+        line-height: 5.56640625vh;
+        margin-bottom: 0;
+        margin-left: 3.958333vw;
+      }
+
+      .english {
+        font-size: 4.4921875vh;
+        line-height: 5.2734375vh;
+        margin-bottom: 0;
+      }
+    }
+
+    .choices {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10.3515725vh;
+      height: 9.27734375vh;
+      width: 46.25vw;
+
+      .choice {
+        flex: 0 0 22.3611vw;
+        background: #303030;
+        border-radius: 8.93162px;
+        height: inherit;
+        font-family: "Work Sans";
+        font-style: normal;
+        font-weight: 600;
+        color: white;
+        font-size: 4.1015625vh;
+        line-height: 4.78515625vh;
+        border: none;
+        &:hover {
+          background-color: #fff;
+          color: #303030;
+        }
+      }
+    }
+  }
+
+  .separator {
+    flex: 1;
+  }
+
+  .column2 {
+    flex: 0 1 41%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-right: 2.91667vw;
+    align-items: flex-end;
+    position: relative;
+
+    .welcome-words {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+      z-index: 2;
+
+      .welcome-wrapper {
+        font-family: "Work Sans";
+        font-style: normal;
+        text-align: center;
+        font-weight: 500;
+        color: black;
+        position: relative;
+        /* margin-top: 14.6484375vh;*/
+
+        .arabic {
+          font-size: 6.640625vh;
+          line-height: 7.8125vh;
+          padding: 0;
+          margin: 0;
+        }
+
+        .english {
+          font-size: 7.82421875vh;
+          line-height: 8.88671875vh;
+          padding: 0;
+          margin: 0;
+        }
+      }
+
+      .bflTech-logo {
+        height: 9.5703125vh;
+        width: 50%;
+
+        img {
+          height: 9.5703125vh;
+          object-fit: contain;
+        }
+      }
+    }
+
+    .sunTech-logo {
+      height: 7.2265625vh;
+      width: 50%;
+      align-self: flex-end;
+      margin-bottom: 2.3475vh;
+      display: flex;
+      justify-content: flex-end;
+      z-index: 2;
+
+      img {
+        height: 9.5703125vh;
+        object-fit: contain;
+      }
+    }
+
+    .tilted-rectangle {
+      position: absolute;
+      left: 15.3vw;
+      top: -2vh;
+      align-self: flex-start;
+      justify-self: flex-start;
+      width: 1000px;
+      height: 1000px;
+      transform: rotate(-31deg);
+      background-color: white;
+      border-radius: 16.40625vh;
+      z-index: 1;
+
+      img {
+        display: none;
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+      }
+    }
+  }
+
+  .city {
+    height: 67.578125vh;
+    width: 78.8889vw;
+    flex: 1;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: flex-end;
+
+    img {
+      object-fit: cover;
+    }
+  }
+
+  .Welcome-mobile {
+    display: none;
+  }
+}
+
+/* Medium Desktop Screens */
+@media only screen and (max-width: 1200px) {
+  .Welcome {
+    .column1 {
+      position: relative;
+      z-index: 5;
+      .profile-img {
+        height: 7.984375vh;
+        width: 7.984375vh;
+        margin-top: 3.90625vh;
+      }
+    }
+    .column2 {
+      .sunTech-logo {
+        height: 5vh;
+
+        img {
+          height: 5vh;
+        }
+      }
+    }
+  }
+}
+
+/* Small Desktop and Wide Tablet Screens */
+@media only screen and (max-width: 950px) {
+  .Welcome {
+    .column1 {
+      position: relative;
+      z-index: 5;
+      .profile-img {
+        height: 6vh;
+        width: 6vh;
+        border-radius: 50%;
+        margin-top: 3.90625vh;
+      }
+
+      .instruction {
+        margin-top: 5.46875vh;
+
+        .arabic {
+          font-size: 4.1875vh;
+          line-height: 5.6640625vh;
+          margin-left: 7.958333vw;
+        }
+
+        .english {
+          font-size: 3.9vh;
+          line-height: 4.8h;
+        }
+      }
+
+      .choices {
+        margin-top: 9.3515725vh;
+        height: 7.27734375vh;
+
+        .choice {
+          font-size: 3.6vh;
+          line-height: 4.28515625vh;
+        }
+      }
+    }
+
+    .column2 {
+      background-color: white;
+
+      .welcome-words {
+        .welcome-wrapper {
+          .arabic {
+            font-size: 5.640625vh;
+            line-height: 6.8125vh;
+          }
+
+          .english {
+            font-size: 6.82421875vh;
+            line-height: 7.88671875vh;
+          }
+        }
+
+        .bflTech-logo {
+          height: 8.5703125vh;
+
+          img {
+            height: 8.5703125vh;
+          }
+        }
+      }
+
+      .sunTech-logo {
+        height: 7.2265625vh;
+        margin-bottom: 10.226563vh img {
+          height: 9.5703125vh;
+          object-fit: contain;
+        }
+      }
+
+      .tilted-rectangle {
+        display: none;
+      }
+    }
+
+    .city {
+      height: 67.578125vh;
+      width: 54vw;
+    }
+  }
+}
+
+/* iPad Pro and Surface Pro 7 */
+@media only screen and (min-width: 910px) and (min-height: 910px) {
+  .Welcome {
+    .column1 {
+      position: relative;
+      z-index: 5;
+
+      .profile-img {
+        height: 6vh;
+        width: 6vh;
+        border-radius: 50%;
+        margin-top: 3.90625vh;
+      }
+
+      .instruction {
+        margin-top: 5.46875vh;
+
+        .arabic {
+          font-size: 4.1875vh;
+          line-height: 5.6640625vh;
+          margin-left: 0.958333vw;
+        }
+
+        .english {
+          font-size: 4.1vh;
+          line-height: 4.8h;
+        }
+      }
+
+      .choices {
+        margin-top: 9.3515725vh;
+        height: 7.27734375vh;
+
+        .choice {
+          font-size: 3.6vh;
+          line-height: 4.28515625vh;
+        }
+      }
+    }
+
+    .column2 {
+      background-color: white;
+
+      .welcome-words {
+        .welcome-wrapper {
+          .arabic {
+            font-size: 5.640625vh;
+            line-height: 6.8125vh;
+          }
+
+          .english {
+            font-size: 6.82421875vh;
+            line-height: 7.88671875vh;
+          }
+        }
+
+        .bflTech-logo {
+          height: 8.5703125vh;
+
+          img {
+            height: 8.5703125vh;
+          }
+        }
+      }
+
+      .sunTech-logo {
+        height: 7.2265625vh;
+        margin-bottom: 10.226563vh img {
+          height: 9.5703125vh;
+          object-fit: contain;
+        }
+      }
+
+      .tilted-rectangle {
+        display: none;
+      }
+    }
+
+    .city {
+      height: 67.578125vh;
+      width: 54vw;
+    }
+  }
+}
+
+/* Tablet Screens */
+@media only screen and (max-width: 730px) {
+  .Welcome {
+    .column1 {
+      position: relative;
+      z-index: 5;
+
+      .profile-img {
+        margin-top: 4.90625vh;
+      }
+
+      .instruction {
+        margin-top: 5.46875vh;
+
+        .arabic {
+          font-size: 3.5vh;
+          line-height: 5.1640625vh;
+          margin-left: 7.958333vw;
+        }
+
+        .english {
+          font-size: 3.2vh;
+          line-height: 4.8h;
+        }
+      }
+
+      .choices {
+        margin-top: 9.3515725vh;
+        height: 16vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .choice {
+          flex-basis: 7.2vh;
+          font-size: 3.6vh;
+          line-height: 4.28515625vh;
+        }
+      }
+    }
+
+    .column2 {
+      background-color: white;
+
+      .welcome-words {
+        .welcome-wrapper {
+          .arabic {
+            font-size: 5.640625vh;
+            line-height: 6.8125vh;
+          }
+
+          .english {
+            font-size: 6.82421875vh;
+            line-height: 7.88671875vh;
+          }
+        }
+
+        .bflTech-logo {
+          height: 8.5703125vh;
+
+          img {
+            height: 8.5703125vh;
+          }
+        }
+      }
+
+      .sunTech-logo {
+        height: 7.2265625vh;
+        margin-bottom: 10.226563vh img {
+          height: 9.5703125vh;
+          object-fit: contain;
+        }
+      }
+
+      .tilted-rectangle {
+        display: none;
+      }
+    }
+
+    .city {
+      height: 67.578125vh;
+      width: 54vw;
+    }
+  }
+}
+
+/* Mobile and Tablet  in landscape orientation */
+@media only screen and (orientation: landscape) and (max-width: 950px) {
+  .Welcome {
+    .column1 {
+      flex-basis: 40%;
+      z-index: 1;
+      padding-left: 8vw;
+      position: relative;
+      z-index: 5;
+
+      .profile-img {
+        height: 8.984375vh;
+        width: 8.984375vh;
+        margin-top: 4.90625vh;
+      }
+
+      .instruction {
+        margin-top: 5.46875vh;
+
+        .arabic {
+          font-size: 5.5vh;
+          line-height: 6.1640625vh;
+          margin-left: 3vw;
+        }
+
+        .english {
+          font-size: 5.2vh;
+          line-height: 5.8vh;
+        }
+      }
+
+      .choices {
+        margin-top: 9.3515725vh;
+        height: 16vh;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .choice {
+          flex-basis: 7.2vh;
+          font-size: 3.6vh;
+          line-height: 4.28515625vh;
+        }
+      }
+    }
+
+    .column2 {
+      background-color: white;
+      padding-right: 5.91667vw;
+
+      .welcome-words {
+        .welcome-wrapper {
+          .arabic {
+            font-size: 9.640625vh;
+            line-height: 10.8125vh;
+          }
+
+          .english {
+            font-size: 10.82421875vh;
+            line-height: 11.88671875vh;
+          }
+        }
+
+        .bflTech-logo {
+          height: 11.5703125vh;
+
+          img {
+            height: 11.5703125vh;
+          }
+        }
+      }
+
+      .sunTech-logo {
+        height: 10.2265625vh;
+        margin-bottom: 8.226563vh img {
+          height: 10.5703125vh;
+          object-fit: contain;
+        }
+      }
+
+      .tilted-rectangle {
+        display: none;
+      }
+    }
+
+    .city {
+      height: 67.578125vh;
+      width: 54vw;
+    }
+  }
+}
+
+.choice a {
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 6rem;
+}
+
+.choice:hover a {
+  color: #303030;
+}
+/* Mobile Screen */
+@media only screen and (max-width: 550px) {
+  .Welcome {
+    .column1 {
+      position: relative;
+      z-index: 5;
+      .instruction {
+        margin-top: 5.46875vh;
+        text-align: center;
+
+        .arabic {
+          font-size: 3.3vh;
+          line-height: 5.1640625vh;
+          margin-left: 0;
+        }
+
+        .english {
+          font-size: 2.8 vh;
+          line-height: 4.8h;
+        }
+      }
+
+      .choices {
+        margin-top: 9.3515725vh;
+        height: 15vh;
+
+        .choice {
+          flex-basis: 6.2vh;
+          font-size: 3vh;
+          line-height: 4.28515625vh;
+        }
+      }
+    }
+
+    .column2 {
+      background-color: white;
+
+      .welcome-words {
+        .welcome-wrapper {
+          .arabic {
+            font-size: 4.640625vh;
+            line-height: 5.8125vh;
+          }
+
+          .english {
+            font-size: 5.82421875vh;
+            line-height: 6.88671875vh;
+          }
+        }
+
+        .bflTech-logo {
+          height: 8.5703125vh;
+
+          img {
+            height: 8.5703125vh;
+          }
+        }
+      }
+    }
+
+    .city {
+      height: 67.578125vh;
+      width: 54vw;
+    }
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .Welcome {
+    .column1,
+    .separator,
+    .column2 {
+      display: none;
+    }
+    .welcome-words img {
+      width: 70px;
+      margin-top: 10px;
+    }
+
+    .Welcome-mobile {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 100vh;
+      background-color: #fdd106;
+      display: flex;
+      position: relative;
+
+      .column1 {
+        flex: 1 1 65%;
+        padding-left: 6.319444vw;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        z-index: 5;
+
+        .instruction {
+          margin-top: 5.46875vh;
+          font-family: "Work Sans";
+          font-style: normal;
+          font-weight: 500;
+          text-align: center;
+
+          .arabic {
+            font-size: 3.6875vh;
+            line-height: 5.56640625vh;
+            margin-bottom: 0;
+            margin-left: 3.958333vw;
+          }
+
+          .english {
+            font-size: 3.4921875vh;
+            line-height: 5.2734375vh;
+            margin-bottom: 0;
+          }
+        }
+
+        .choices {
+          display: flex;
+          justify-content: space-between;
+          margin-top: 5vh;
+          height: 15vh;
+          width: 70.25vw;
+
+          .choice {
+            flex: 0 0 22.3611vw;
+            background: #303030;
+            border-radius: 8.93162px;
+            flex-basis: 7vh;
+            font-family: "Work Sans";
+            font-style: normal;
+            font-weight: 600;
+            color: white;
+            font-size: 3vh;
+            line-height: 3.5vh;
+          }
+        }
+      }
+
+      .column2 {
+        flex: 0 1 35%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding-right: 2.91667vw;
+        align-items: center;
+        position: relative;
+
+        .welcome-words {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          align-content: center;
+          flex: 1;
+          z-index: 2;
+          position: relative;
+
+          .profile-img {
+            height: 6vh;
+            width: 6vh;
+            border-radius: 50%;
+            margin-top: 3.90625vh;
+            margin-right: 6.319444vw;
+            position: absolute;
+            top: 0;
+            left: 0;
+            box-shadow: 1px 1px 5px 2px rgb(176, 176, 176);
+            cursor: pointer;
+
+            img {
+              height: inherit;
+              width: inherit;
+              border-radius: 50%;
+            }
+          }
+
+          .welcome-wrapper {
+            font-family: "Work Sans";
+            font-style: normal;
+            text-align: center;
+            font-weight: 500;
+            color: black;
+            position: relative;
+            margin-top: 3vh;
+
+            .arabic {
+              font-size: 5vh;
+              line-height: 6.5vh;
+              padding: 0;
+              margin: 0;
+            }
+
+            .english {
+              font-size: 6vh;
+              line-height: 7vh;
+              padding: 0;
+              margin: 0;
+            }
+          }
+
+          .bflTech-logo {
+            height: 9.5703125vh;
+            width: 50%;
+            margin-bottom: 2rem;
+
+            img {
+              height: 9.5703125vh;
+              object-fit: contain;
+            }
+          }
+        }
+      }
+
+      .sunTech-logo {
+        height: 5.2265625vh;
+        width: 50%;
+        align-self: flex-end;
+        margin-bottom: 2.3475vh;
+        display: flex;
+        justify-content: flex-start;
+        z-index: 2;
+
+        img {
+          height: 9.5703125vh;
+          object-fit: contain;
+          background-color: rgba(255, 255, 255, 0.6);
+        }
+      }
+
+      .city {
+        height: 67.578125vh;
+        width: 100%;
+        flex: 1;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        align-items: flex-end;
+
+        img {
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,185 @@
+// Register-main Start
+.register-main {
+  height: 100vh;
+  .register-image {
+    position: relative;
+    justify-content: space-between;
+
+    .bg-main {
+      height: 25rem;
+    }
+
+    .logo-girl {
+      height: 5rem;
+      position: absolute;
+      left: 4rem;
+      top: 3rem;
+    }
+
+    svg {
+      position: absolute;
+      left: 10rem;
+      top: 5.3rem;
+    }
+
+    .logo-main {
+      height: 100%;
+      margin: 2rem 2rem;
+    }
+  }
+  .scanner-main {
+    height: 300px;
+    position: relative;
+    bottom: 8.2rem;
+    left: 6rem;
+    .young-main {
+      position: absolute;
+      left: 3rem;
+      z-index: 2;
+    }
+    .scanner {
+      position: absolute;
+      left: 8.8rem;
+      bottom: 6rem;
+    }
+  }
+}
+// Register box
+
+.register-box {
+  background-color: #fdb506;
+  height: 100vh;
+  text-align: center;
+  position: relative;
+
+  .bfl-logo {
+    margin-top: 1rem;
+    width: 15rem;
+  }
+  .vector-main {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+}
+.register-box-buttons {
+  width: 220px;
+  margin: 2rem auto;
+  z-index: 4;
+  position: relative;
+
+  button {
+    border: none;
+    padding: 1rem 3rem;
+    margin: 10px 0;
+    min-width: 220px;
+    border-radius: 10px;
+    background-color: #b1b1b1;
+    color: #fff;
+    &:hover {
+      background-color: #fff;
+      color: #303030;
+    }
+  }
+}
+.register-box-buttons .register-open {
+  background-color: #303030;
+  &:hover {
+    color: #303030;
+    background-color: #ffffff;
+  }
+}
+
+// media query
+
+@media only screen and (max-width: 1230px) {
+  .register-box {
+    height: 124vh;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .register-main {
+    height: 124vh;
+    .scanner-main {
+      left: 0;
+
+      .young-main {
+        left: 9rem;
+      }
+      .scanner {
+        left: 14.8rem;
+      }
+    }
+  }
+  .register-box .vector-main {
+    left: 0rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .register-box .vector-main {
+    left: 5rem;
+  }
+  .scanner-main {
+    .young-main {
+      left: 6rem !important;
+    }
+    .scanner {
+      left: 11.8rem !important;
+    }
+  }
+}
+
+@media only screen and (max-width: 660px) {
+  .register-box .vector-main {
+    left: 0rem;
+  }
+}
+
+@media only screen and (max-width: 610px) {
+  .register-box .vector-main {
+    left: 0rem;
+  }
+  .register-main {
+    height: 150vh;
+    .register-image {
+      display: block !important;
+    }
+    .scanner-main {
+      .young-main {
+        top: 7.5rem;
+      }
+      .scanner {
+        left: 12rem;
+        bottom: 0rem;
+        width: 50%;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 586px) {
+  .register-main {
+    height: 177vh;
+  }
+}
+
+@media screen and (max-width: 426px) {
+  .register-main {
+    height: 110vh;
+  }
+  .register-box {
+    height: 74vh;
+  }
+}
+
+@media only screen and (max-width: 376px) {
+  .scanner-main {
+    .young-main {
+      left: 3rem !important;
+    }
+    .scanner {
+      bottom: 2rem !important;
+      left: 9.8rem !important;
+    }
+  }
+}

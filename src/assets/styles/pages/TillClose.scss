@@ -1,0 +1,42 @@
+.till-box {
+  background-color: #fdb506;
+  height: 100vh;
+  text-align: center;
+  position: relative;
+  .vector-main {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+  .bfl-logo {
+    margin-top: 1rem;
+    width: 15rem;
+  }
+}
+.till-box-buttons {
+  width: 220px;
+  margin: 2rem auto;
+  z-index: 4;
+  position: relative;
+
+  button {
+    border: none;
+    padding: 1rem 3rem;
+    margin: 10px 0;
+    min-width: 220px;
+    border-radius: 10px;
+    background-color: #b1b1b1;
+    color: #fff;
+    &:hover {
+      background-color: #fff;
+      color: #303030;
+    }
+  }
+}
+.till-box-buttons button:nth-child(3) {
+  background-color: #303030;
+  &:hover {
+    color: #303030;
+    background-color: #ffffff;
+  }
+}

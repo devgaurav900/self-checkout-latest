@@ -1,0 +1,234 @@
+.payment-sucess-main-box {
+  padding: 5rem 0 0rem;
+  height: 118vh;
+  background-image: url(../../images/transactions/Vector7.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #e5e5e5;
+  padding: 5rem 0 0;
+
+  .payment-sucess-main h3 {
+    text-align: center;
+    padding-bottom: 2rem;
+  }
+}
+.remove-main {
+  width: 89% !important;
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+
+.security-tag {
+  text-align: center;
+  padding: 1rem;
+}
+.product-detail {
+  background-color: #f9f9ac;
+  border: 3px solid #fdd106;
+  border-left: 0;
+  border-right: 0;
+  height: 400px;
+}
+.product-details-main {
+  overflow-y: scroll;
+  height: 390px;
+  .product-box-details {
+    max-width: 160px;
+  }
+  .product-box {
+    border-bottom: 1px solid #898989;
+    padding: 10px 0 10px 2rem;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .red-button {
+    height: 60px;
+    margin-right: 2rem;
+  }
+}
+.main-payment-box {
+  width: 89%;
+}
+
+.product-image-bg {
+  background-image: linear-gradient(
+      rgba(32, 32, 32, 0.616),
+      rgba(0, 0, 0, 0.616)
+    ),
+    url(../../images/remove/remove-bg.png);
+  height: 394px;
+  margin-left: 2rem;
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+  position: relative;
+
+  .product-slider {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background-color: #fff;
+    position: absolute;
+    left: 42%;
+    top: 19%;
+    background-image: url(../../images/remove/product.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  .carousel-item {
+    height: 400px;
+  }
+  .carousel-indicators [data-bs-target] {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #fdd106;
+  }
+}
+
+.remove-main-image {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background-color: #fff;
+  position: absolute;
+  left: 42%;
+  top: 19%;
+  background-image: url(../../images/gif/remove-bg.gif);
+  background-repeat: no-repeat;
+  background-size: contain;
+  img {
+    width: 60px;
+    position: absolute;
+    bottom: 25px;
+    left: 41%;
+    border-radius: 50%;
+  }
+  h6 {
+    position: absolute;
+    top: 34%;
+    font-size: 30px;
+    color: #46df4c;
+    text-align: center;
+    text-shadow: 0 4 4 0 #000000 25%;
+  }
+}
+.customer-details {
+  text-align: left;
+}
+
+@media only screen and (max-width: 1980px) {
+  .main-bg {
+    .payment-sucess-main {
+      height: 100vh;
+    }
+  }
+  .remove-main {
+    width: 93% !important ;
+  }
+}
+
+@media only screen and (max-width: 1920px) {
+  .main-bg {
+    .payment-sucess-main {
+      height: 100vh;
+    }
+  }
+  .remove-main {
+    width: 89% !important ;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .remove-main {
+    position: absolute;
+    width: 86% !important;
+    top: 3rem;
+  }
+  .payment-sucess-main .sucess-message h3 {
+    padding: 10px 2rem 0;
+  }
+  .payment-sucess-main {
+    height: 90.5vh;
+  }
+  .payment-sucess-main-box {
+    height: 99vh;
+  }
+
+  .payment-sucess-main-box {
+    height: 164vh;
+  }
+}
+
+.remove-circle-main {
+  background-image: url(../../images/gif/remove-bg.gif);
+  height: 300px;
+  width: 300px;
+}
+
+@media only screen and (max-width: 992px) {
+  .payment-sucess-main-box {
+    height: 94vh;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .product-detail {
+    height: 850px;
+  }
+  .product-image-bg {
+    .carousel-inner {
+      margin: 2rem 0;
+    }
+    .product-slider {
+      left: 42%;
+    }
+  }
+  .remove-main {
+    width: 100% !important;
+    top: 9rem;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .payment-sucess-main .sucess-message h3 {
+    padding: 4rem 2rem 0;
+  }
+}
+
+@media only screen and (max-width: 426px) {
+  .product-details-main {
+    .product-box {
+      margin: 0 10px;
+    }
+  }
+  .remove-main {
+    width: 100%;
+    position: absolute;
+  }
+  .product-image-bg {
+    .product-slider {
+      left: 23%;
+    }
+  }
+  .remove-main-image {
+    left: 25%;
+  }
+  .payment-sucess-main {
+    height: 117vh;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .product-image-bg {
+    .product-slider {
+      left: 18%;
+    }
+  }
+}
+@media only screen and (max-width: 320px) {
+  .product-image-bg {
+    .product-slider {
+      left: 10%;
+    }
+  }
+}

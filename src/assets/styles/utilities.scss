@@ -1,0 +1,38 @@
+@mixin define_flex($direction: row, $align: flex-start, $justify: flex-start) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+@mixin set_image($height: inherit, $width: inherit, $object_fit: contain) {
+  height: $height;
+  width: $width;
+  object-fit: $object-fit;
+}
+
+@mixin positioning(
+  $position: static,
+  $top: 0,
+  $left: 0,
+  $bottom: 0,
+  $right: 0
+) {
+  position: $position;
+  top: $top;
+  left: $left;
+  bottom: $bottom;
+  right: $right;
+}
+
+@function px_to_vh($px) {
+  @return ($px / 1024) * 100vh;
+}
+
+@function px_to_vw($px) {
+  @return ($px / 1440) * 100vw;
+}
+
+@function px_to_percent($childSize, $parentSize) {
+  @return ($childSize / $parentSize) * 100%;
+}

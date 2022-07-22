@@ -1,0 +1,105 @@
+.drop-item-main {
+  background-color: #fed400;
+  border-radius: 0 28rem 0 0;
+  text-align: center;
+  background-image: url(../..//images/items/back-vector.png);
+  background-repeat: no-repeat;
+  background-size: 75rem;
+  // height: 100vh;
+
+  .logo-main {
+    float: right;
+    padding-right: 7px;
+  }
+  .bfl-main-logo {
+    text-align: right;
+    height: 74px;
+    padding-top: 0.5rem;
+    justify-content: space-between;
+  }
+  .cart-main {
+    margin-bottom: 15px;
+  }
+}
+.items-main img {
+  width: 80%;
+  height: 480px;
+}
+.cloth-main {
+  #barcode-value {
+    bottom: 9.2rem;
+    position: relative;
+    left: 13px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    width: 30%;
+    padding-left: 2rem;
+  }
+  input:-internal-autofill-selected {
+    background-color: transparent;
+  }
+}
+
+// @media only screen and (max-width: 1440px) {
+//   .item-main {
+//     height: 100vh;
+//   }
+// }
+
+@media (max-width: "968px") {
+  .drop-item-main {
+    background-size: 54rem;
+  }
+}
+
+@media (max-width: "1024px") {
+  .item-main {
+    height: 100vh;
+  }
+  .drop-item-main {
+    background-size: 77rem;
+    .cart-main {
+      position: relative;
+      top: 7rem;
+    }
+    .cloth-main {
+      position: relative;
+      top: 7rem;
+    }
+  }
+}
+@media only screen and (max-width: 992px) {
+  .item-main {
+    height: 150vh;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .items-main img {
+    width: 65%;
+    height: 450px;
+  }
+  .drop-item-main {
+    height: 150vh;
+  }
+  .cloth-main #barcode-value {
+    bottom: 8.2rem;
+    left: 6rem;
+    width: 50%;
+}
+}
+@media only screen and (max-width: 580px) {
+  .item-main {
+    height: 115vh;
+  }
+  .drop-item-main {
+    height: 157vh;
+  }
+}
+
+@media only screen and (max-width:425px) {
+  .cloth-main #barcode-value {
+    left: 2rem;
+}
+}

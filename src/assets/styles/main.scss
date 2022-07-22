@@ -1,0 +1,22 @@
+/* utilities */
+@import "./utilities.scss";
+
+/* Pages */
+@import "./pages/checkout.scss";
+@import "./pages/credit-debit.scss";
+@import "./pages/Welcome.scss";
+@import "./pages/DropItems.scss";
+@import "./pages/Login.scss";
+@import "./pages/Rating.scss";
+@import "./pages/Receipt.scss";
+@import "./pages/Register.scss";
+@import "./pages/TillClose.scss";
+@import "./pages/Remove.scss";
+@import "./pages/SidebarAndPaymentSuccess.scss";
+
+/* Components */
+@import "./components/Sidebar.scss";
+@import "./components/Errorpage.scss";
+
+/* Popups */
+@import "./popups/popup.scss";
