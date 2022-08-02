@@ -13,10 +13,10 @@ import HttpApi from 'i18next-http-backend'
 import LanguageDetector from 'i18next-browser-languagedetector'
 
 /* Start the mockup Service Worker (msw) only when in development mode */
-if (process.env.NODE_ENV === "development" || process.env.NODE_ENV === "production") {
-  const { worker } = require("./mocks/browser.js");
-  worker.start();
-}
+// if (process.env.NODE_ENV === "development" || process.env.NODE_ENV === "production") {
+//   const { worker } = require("./mocks/browser.js");
+//   worker.start();
+// }
 
 /* Language selection feature */
 i18next

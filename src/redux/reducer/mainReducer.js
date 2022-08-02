@@ -1,37 +1,60 @@
 import { REDUCER_CONSTANT } from "../constants";
 
 const initialState = {
-  postData: [],
+  isLogin: false,
+  employeeInfo: {},
+  storeInfo: {},
+  registerInfo: {
+    register: {
+      registerId: 101,
+    }
+  },
+  tillInfo: {},
+
 };
 
 export const mainReducer = (state = initialState, action = {}) => {
   switch (action.type) {
-    case REDUCER_CONSTANT.USER_SIGNIN:
+    case REDUCER_CONSTANT.USER_SIGNIN: {
+      let isLogin = false;
+      if (action.payload) isLogin = true;
       return {
         ...state,
-        postData: [action.payload, ...state.postData],
+        isLogin: isLogin,
+        employeeInfo: action.payload
       };
-    case REDUCER_CONSTANT.REGISTER_OPEN:
+    }
+    case REDUCER_CONSTANT.STORE_OPEN:
       return {
         ...state,
-        postData: [action.payload],
+        storeInfo: action.payload
       };
-    case REDUCER_CONSTANT.REGISTER_CLOSE:
+    case REDUCER_CONSTANT.STORE_CLOSE:
       return {
         ...state,
-        postData: [...action.payload],
+        storeInfo: action.payload
       };
-    case REDUCER_CONSTANT.TILL_OPEN:
-      return {
-        ...state,
-        postData: [action.payload, ...state.postData],
-      };
-    case REDUCER_CONSTANT.TILL_CLOSE:
-      return {
-        ...state,
-        postData: [action.payload, ...state.postData],
-      };
-    default:
-      return state;
+  case REDUCER_CONSTANT.REGISTER_OPEN:
+    return {
+      ...state,
+      registerInfo: action.payload
+    };
+  case REDUCER_CONSTANT.REGISTER_CLOSE:
+    return {
+      ...state,
+      registerInfo: action.payload
+    };
+  case REDUCER_CONSTANT.TILL_OPEN:
+    return {
+      ...state,
+      tillInfo: action.payload
+    };
+  case REDUCER_CONSTANT.TILL_CLOSE:
+    return {
+      ...state,
+      tillInfo: action.payload
+    };
+  default:
+    return state;
   }
 };

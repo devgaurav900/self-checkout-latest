@@ -80,6 +80,11 @@
       background-color: #fff;
       color: #303030;
     }
+    &:disabled {
+      cursor: not-allowed;
+      color: #b1b1b1;
+      background: white;
+    }
   }
 }
 .register-box-buttons .register-open {

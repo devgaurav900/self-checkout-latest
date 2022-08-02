@@ -1,21 +1,13 @@
 import { REDUCER_CONSTANT } from "../constants";
 
-const initialState = {
-  loader: false,
-};
+const initialState = false;
 
 export const loaderReducer = (state = initialState, action = {}) => {
   switch (action.type) {
     case REDUCER_CONSTANT.LOADER_START:
-      return {
-        ...state,
-        loader: action.payload,
-      };
+      return action.payload;
     case REDUCER_CONSTANT.LOADER_OFF:
-      return {
-        ...state,
-        loader: action.payload,
-      };
+      return action.payload;
 
     default:
       return state;

@@ -2,26 +2,27 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { BflGroupLogo, Cart, ClothStore, Logo } from "../assets/images";
 import { useTranslation } from "react-i18next";
-// import  QrReader  from "react-qr-reader";
+import { _getCheckoutArticle } from "../redux/actions";
+import { useSelector, useDispatch } from 'react-redux';
 
 const DropItems = () => {
   const { t } = useTranslation();
   const [username, setUsername] = useState("");
+  const [getBarcode, setGetBarcode] = useState('')
+  const checkoutArticles = useSelector(state => state.checkoutArticles);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    const user = localStorage.getItem("userName");
-    setUsername(JSON.parse(user));
-  }, []);
+    _getCheckoutArticle(dispatch);
+  }, [dispatch]);
 
-  const [inputShow, setInputShow] = useState("");
   const navigate = useNavigate();
 
-  const onBarcodeChange = () => {
-    if (inputShow === " ") {
-      alert("Please scan Your Item !!!");
-    } else {
-      navigate("/checkout");
-    }
+  const onBarcodeChange = (event) => {
+    event.preventDefault()
+    const newValue = event.target.value;
+    setGetBarcode(newValue);
+    if (newValue == checkoutArticles.id) navigate("/checkout");
   };
 
   return (
@@ -57,7 +58,8 @@ const DropItems = () => {
                 <input
                   id="barcode-value"
                   type="text"
-                  placeholder={t(" ")}
+                  value={getBarcode}
+                  placeholder="Enter a product Id"
                   className="mb-2"
                   onChange={onBarcodeChange}
                 />

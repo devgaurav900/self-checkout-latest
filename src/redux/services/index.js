@@ -1,73 +1,81 @@
-import axios from "axios";
 const baseURL = process.env.REACT_APP_BASE_URL;
 
-var headers = {
+var requestHeaders = {
   Authorization: `Bearer ${localStorage.getItem("access-token")}`,
+  "Content-Type": "application/json",
+  "Access-Control-Allow-Origin": "*",
+  Accept: "application/json",
 };
 
 export const userSignIn = async (data) => {
-  let res = await axios
-    .post(`${baseURL}/auth/token/SignIn`, { ...data })
-    .then((response) => {
-      return response;
-    });
-  return res;
+  const response = await fetch(`${baseURL}/auth/token/SignIn`, { 
+    method: 'POST',
+    headers: { 
+      ...requestHeaders,
+      Authorization: ''
+    },
+    body: JSON.stringify(data)
+   })
+  const jsonResponse = await response.json();
+  console.log('login:', jsonResponse)
+  return jsonResponse;
+};
+
+export const storeOpen = async () => {
+  const response = await fetch(`${baseURL}/store-open/storeId/20002`, { headers: requestHeaders })
+  const jsonResponse = await response.json();
+  return jsonResponse;
+};
+
+export const storeClose = async () => {
+  const response = await fetch(`${baseURL}/store-close/storeId/20002`, { headers: requestHeaders })
+  const jsonResponse = await response.json();
+  return jsonResponse;
 };
 
 export const registerOpen = async () => {
-  let enteredRegisterId = localStorage.getItem("entered-register-id");
-  let accessToken = localStorage.getItem("access-token");
-  let res = await axios
-    .get(`${baseURL}/open-register/registerId/${enteredRegisterId}`, {
-      headers: {
+  const response = await fetch(`${baseURL}/open-register/storeId/20001/registerId/104`, { headers: requestHeaders })
+  const jsonResponse = await response.json();
+  return jsonResponse;
+};
+
+export const registerClose = async () => {
+    const response = await fetch(`${baseURL}/close-register/registerId/104/`, { headers: requestHeaders })
+    const jsonResponse =  await response.json();
+    return jsonResponse;
+};
+
+export const tillOpen = async () => {
+  const response = await fetch(`${baseURL}/till-Open/tillId/105/`, { headers: requestHeaders })
+  const jsonResponse = await response.json();
+  return jsonResponse;
+};
+
+export const tillClose = async () => {
+    const response = await fetch(`${baseURL}/till-Close/tillId/105/`, { headers: requestHeaders });
+  const jsonResponse = await response.json();
+  return jsonResponse;
+};
+
+export const getCheckoutArticle = async () => {
+  const response = await fetch(`${baseURL}/itemId/191050181312`, { headers: requestHeaders });
+const jsonResponse = await response.json();
+return jsonResponse;
+}
+
+// export const getItems = async () => {
+//   let res = await axios
+//     .get(`${baseURL}/itemId/1/${enteredRegisterId}`, {
+//       headers: {
         
-        Authorization: `Bearer ${accessToken}`,
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "*",
-        Accept: "application/json",
-      },
-    })
-    .then((response) => {
-      return response;
-    });
-  return res;
-};
-
-export const registerClose = async (data) => {
-  let registerCloseId = localStorage.getItem("register-close-id");
-  let res = await axios
-    .post(`${baseURL}/close-register/registerId/${registerCloseId}`, {
-      ...data,
-      headers: headers,
-    })
-    .then((response) => {
-      return response;
-    });
-  return res;
-};
-
-export const tillOpen = async (data) => {
-  let enteredTillOpenId = localStorage.getItem("entered-till-id");
-  let res = await axios
-    .post(`${baseURL}/till-Open/tillId/${enteredTillOpenId}`, {
-      ...data,
-      headers: headers,
-    })
-    .then((response) => {
-      return response;
-    });
-  return res;
-};
-
-export const tillClose = async (data) => {
-  let enteredTillCloseId = localStorage.getItem("entered-till-close-id");
-  let res = await axios
-    .post(`${baseURL}/till-Close/tillId/${enteredTillCloseId}`, {
-      ...data,
-      headers: headers,
-    })
-    .then((response) => {
-      return response;
-    });
-  return res;
-};
+//         Authorization: `Bearer ${accessToken}`,
+//         "Content-Type": "application/json",
+//         "Access-Control-Allow-Origin": "*",
+//         Accept: "application/json",
+//       },
+//     })
+//     .then((response) => {
+//       return response;
+//     });
+//   return res;
+// };

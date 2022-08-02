@@ -10,6 +10,8 @@ import cookies from "js-cookie";
 import { languages } from "../assets/languages/index";
 import { useTranslation } from "react-i18next";
 
+import { generateBarcode, getIdFromBarcode } from '../utilities.js';
+
 const Welcome = () => {
   const { t } = useTranslation();
   const currentLanguageCode = cookies.get("i18next") || "en";
@@ -22,6 +24,9 @@ const Welcome = () => {
 
   useEffect(() => {
     document.querySelectorAll(".translate").dir = currentLanguage.dir || "ltr";
+    const barcode = generateBarcode(3456);
+    console.log('barcode', barcode);
+    console.log('id', getIdFromBarcode(barcode))
   }, [currentLanguage]);
 
   let accessToken = localStorage.getItem("access-token");

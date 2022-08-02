@@ -3,15 +3,18 @@ import { Button, Modal, Image } from "react-bootstrap";
 import { Logo } from "../assets/images";
 import TillOpen from "../popup/TillOpen";
 import TillClose from "../popup/TillClose";
+import {
+  _tillOpen,
+  _tillClose,
+} from '../redux/actions';
+import { useDispatch, useSelector } from 'react-redux';
 
 
-
-
-const TillOption = ({ show, handleClose }) => {
-  
-
+const TillOption = ({ show, handleClose, triggerAbility}) => {
   const [tillShow, setTillShow] = useState(false);
-
+  const dispatch = useDispatch();
+  const tillInfo = useSelector(state => state.info.tillInfo);
+  
   const closeTill = () => {
     setTillShow(false);
   };
@@ -32,10 +35,16 @@ const TillOption = ({ show, handleClose }) => {
         </Modal.Header>
         <Modal.Body>
             <div className="button-till-section">
-              <Button type="button" className="till-button" onClick={() => setTillShow(true)}>
+              <Button type="button" className="till-button" onClick={() => {
+                _tillOpen(dispatch)
+                setTillShow(true);}}
+                disabled={triggerAbility(tillInfo.status, 'open')}>
               Till Open
               </Button>
-              <Button type="button" className="till-button" onClick={() => setPay(true)} >
+              <Button type="button" className="till-button" onClick={() => {
+                _tillClose(dispatch)
+                setPay(true);}} 
+                disabled={triggerAbility(tillInfo.status, 'close')}>
               Till Close
               </Button>
               <Button type="button" className="till-button">

@@ -8,22 +8,21 @@ function Article({ article, salePrice, onPress }) {
       <div className="col-lg-4 product-list">
           <div className="product-info">
             <h5>
-              <strong>{article.name}</strong>
+              <strong>{article.description || 'T-shirt'}</strong>
             </h5>
-            <div className="brand-name">{article.brand}</div>
             <div className="product-full-name">{article.info}</div>
           </div>
       </div>
       <div className="col-lg-8">
         <div className="row g-0">
           <div className=" col-md-2 text-center my-auto price">
-            <strong>AED {article.price}</strong>
+            <strong>AED {article.priceList.price}</strong>
           </div>
           <div className=" col-md-2  text-center my-auto discount">
-            <strong>{article.discount} %</strong>
+            <strong>{process.env.REACT_APP_DEFAULT_DISCOUNT} %</strong>
           </div>
           <div className=" col-md-2  text-center my-auto tax">
-            <strong>{article.tax} %</strong>
+            <strong>{process.env.REACT_APP_DEFAULT_TAX} %</strong>
           </div>
           <div className=" col-md-3  text-center my-auto total">
             AED {salePrice}

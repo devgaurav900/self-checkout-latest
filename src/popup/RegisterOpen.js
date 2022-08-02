@@ -1,30 +1,23 @@
-import React, { useState, Fragment } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 import { Button, Modal, Image, Form, Row } from "react-bootstrap";
 import { GoArrowRight } from "react-icons/go";
 import { Logo } from "../assets/images";
 import TillOpen from "../popup/TillOpen";
-// import { useDispatch } from "react-redux/es/exports";
-// import { _registerOpen } from "../redux/actions";
+import { _registerOpen } from "../redux/actions";
+import { useSelector, useDispatch } from "react-redux";
 
 const RegisterOpen = ({ show, handleClose }) => {
-  // const dispatch = useDispatch();
-  // const tillData = useSelector(state => state.mainReducer.postData)
   const [tillShow, setTillShow] = useState(false);
-
-  // const submitRegisterOpen = () => {
-  //   const actualRegisterId = localStorage.getItem("actual-register-id");
-  //   const enteredRegisterId = localStorage.getItem("entered-register-id");
-  //   if (actualRegisterId === enteredRegisterId) {
-  //     _registerOpen(dispatch);
-  //     setTillShow(true);
-  //   } else {
-  //     alert("Please Enter Valid Register Id ~");
-  //   }
-  // };
+  const dispatch = useDispatch();
 
   const closeTill = () => {
     setTillShow(false);
   };
+
+  useEffect(() => {
+    _registerOpen(dispatch);
+    
+  }, [dispatch])
 
   return (
     <Fragment>
@@ -49,7 +42,7 @@ const RegisterOpen = ({ show, handleClose }) => {
                 }
               />
             </Col> */}
-            <h3>Register 101 is Open</h3>
+            <h3>Register 104 is Open</h3>
             <div className="button-section">
               <Button variant="warning" onClick={() => setTillShow(true)}>
                 Continue <GoArrowRight size={20} />

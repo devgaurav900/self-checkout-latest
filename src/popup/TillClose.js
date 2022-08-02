@@ -10,7 +10,6 @@ const TillClose = ({ show, closeTill }) => {
   const showTillLogout = () => {
     setShowLogout(true);
   };
-
   const closeTillLogout = () => {
     setShowLogout(false);
   };
@@ -30,7 +29,7 @@ const TillClose = ({ show, closeTill }) => {
               Enter Till Id
             </Form.Label>
             <Col sm="8">
-              <Form.Control type="number" placeholder="5986" />
+              <Form.Control type="number" placeholder="5989" />
             </Col>
             <div className="button-section">
               <Button variant="warning" onClick={showTillLogout}>

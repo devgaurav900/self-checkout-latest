@@ -10,10 +10,10 @@ import { useIdleTimer } from "react-idle-timer";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { _setCheckoutTotal } from "../redux/actions";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { _getCheckoutArticle } from "../redux/actions";
 
 const Checkout = () => {
-  const [articles, setArticles] = useState(null);
   const [transactions, setTransactions] = useState([]);
   const [getBarcode, setGetBarcode] = useState("");
   const [totalSalePrice, setTotalSalePrice] = useState(0);
@@ -26,112 +26,69 @@ const Checkout = () => {
   const [isTransactions, setIsTransactions] = useState(false);
   const { t } = useTranslation();
   const dispatch = useDispatch();
+  const checkoutArticles = useSelector(state => state.checkoutArticles);
 
   const removeItem = () => {
     if(counter - 1 === 0) {
       navigate('/drop-your-items')
     }
     setCounter(counter - 1);
-    let oldArr = articles.slice(0, counter);
-    computeTotalSalePrice(oldArr);
-    computeTotalDiscount(oldArr);
-    computeTotalTaxes(oldArr);
+    computeTotalSalePrice();
+    computeTotalDiscount();
+    computeTotalTaxes();
   };
 
-  const total_value = totalSalePrice.toFixed(2);
-  localStorage.setItem('total-price', total_value)
-  const computeTotalSalePrice = (articles) => {
+
+  const computeTotalSalePrice = async () => {
     let totalSalePrice = 0;
-    articles
-      ? articles.slice(0, counter).forEach((article) => {
+    const totalSaltePriceArray = await checkoutArticles
+      ? [...Array(counter)].forEach(() => {
           totalSalePrice += salePrice(
-            article.price,
-            article.discount,
-            article.tax
+            checkoutArticles.priceList.price,
           );
           setTotalSalePrice(totalSalePrice);
         })
-      : (totalSalePrice = 0);
+      : '';
+      console.log('totalSalePriceArray:', Array(counter));
+      console.log('price:', checkoutArticles.priceList.price)
     _setCheckoutTotal(dispatch, totalSalePrice);
   };
 
-  const computeTotalDiscount = (articles) => {
+  const computeTotalDiscount = () => {
     let totalDiscount = 0;
-    articles
-      ? articles.slice(0, counter).forEach((article) => {
-          totalDiscount += saleDiscount(article.price, article.discount);
-
-          setDiscountTotal(totalDiscount);
+    checkoutArticles
+      ? [...Array(counter)].forEach(() => {
+          totalDiscount += saleDiscount(checkoutArticles.priceList.price);
         })
       : (totalDiscount = 0);
+      setDiscountTotal(totalDiscount);
   };
 
-  const total_taxes = totalTaxValue.toFixed(2);
-  const computeTotalTaxes = (articles) => {
+  const computeTotalTaxes = () => {
     let totalTax = 0;
-    articles
-      ? articles.slice(0, counter).forEach((article) => {
-          totalTax += saleTaxes(article.price, article.discount, article.tax);
-
-          setTotalTaxValue(totalTax);
+    checkoutArticles
+      ? [...Array(counter)].forEach(() => {
+          totalTax += saleTaxes(checkoutArticles.priceList.price);
         })
       : (totalTax = 0);
+    setTotalTaxValue(totalTax);
   };
-
-  
 
   useEffect(() => {
-    const load = async () => {
-      await getAllArticles();
-      await getAllTransactions();
-      if (isTransactions) createTransaction(transactionData);
-    };
-    load();
-  }, [isArticles, isTransactions]);
-
-  async function getAllArticles() {
-    const allArticles = await getArticles();
-    setArticles(allArticles);
-    computeTotalSalePrice(allArticles);
-    computeTotalDiscount(allArticles);
-    computeTotalTaxes(allArticles);
-    if (isArticles) setIsArticles(true);
-  }
-
-  async function getAllTransactions() {
-    const allTransactions = await getTransactions();
-    setTransactions(await allTransactions);
-    console.log(await allTransactions);
-    if (allTransactions) setIsTransactions(true);
-    return await allTransactions;
-  }
-
-  const transactionData = {};
-
-  const createTransaction = async (transaction) => {
-    if (transactions) setTransactions([...transactions, transaction]);
-    else {
-      await getAllTransactions();
-    }
-  };
+    _getCheckoutArticle(dispatch);
+  }, [dispatch]);
 
   // Bar Code Scanner
-  const onBarcodeChange = async (e) => {
-    setGetBarcode(e.target.value);
-    await numberOfArticlesToRender();
-  };
-  const numberOfArticlesToRender = async () => {
-    if (counter < articles.length) {
-      if ((getBarcode.length % 8 || getBarcode.length % 15) === 0) {
-        setCounter(counter + 1);
-        console.log("before", totalSalePrice);
-        computeTotalSalePrice(articles.slice(0, counter));
-        console.log("after", totalSalePrice);
-      }
-    }
+  const onBarcodeChange = async (event) => {
+    const newValue = event.target.value;
+    setGetBarcode(newValue); 
+    if (newValue == checkoutArticles.id) {
+      setCounter(counter + 1);
+      await computeTotalSalePrice()
+    };
   };
 
-  const salePrice = (originalPrice, discount, tax) => {
+  const salePrice = (originalPrice, discount=process.env.REACT_APP_DEFAULT_DISCOUNT, tax=process.env.REACT_APP_DEFAULT_TAX) => {
     const discountValue = (originalPrice * discount) / 100;
     const discountedPrice = originalPrice - discountValue;
     const gstValue = (discountedPrice * tax) / 100;
@@ -139,12 +96,11 @@ const Checkout = () => {
     return result_data;
   };
 
-  const saleDiscount = (originalPrice, discount) => {
-    const discountValue = (originalPrice * discount) / 100;
-    return discountValue;
+  const saleDiscount = (originalPrice, discount=process.env.REACT_APP_DEFAULT_DISCOUNT) => {
+    return (originalPrice * discount) / 100;
   };
 
-  const saleTaxes = (originalPrice, discount, tax) => {
+  const saleTaxes = (originalPrice, discount=process.env.REACT_APP_DEFAULT_DISCOUNT, tax=process.env.REACT_APP_DEFAULT_TAX) => {
     const discountValue = (originalPrice * discount) / 100;
     const discountedPrice = originalPrice - discountValue;
     const gstValue = (discountedPrice * tax) / 100;
@@ -152,26 +108,32 @@ const Checkout = () => {
   };
 
   const renderArticles = () => {
-    return articles ? (
-      articles.slice(0, counter).map((article, index) => (
-        <li key={article.id}>
-          <Article
-            onPress={() => removeItem(index)}
-            article={article}
-            salePrice={salePrice(article.price, article.discount, article.tax)}
-          />
-        </li>
-      ))
-    ) : (
-      <p>{t("loading")}</p>
-    );
+    if (checkoutArticles) {
+      const articlesToDisplay = [];
+      for(let index = 0 ; index < counter; index++) {
+        articlesToDisplay.push(
+          <li key={checkoutArticles.id}>
+            <Article
+              onPress={() => removeItem(index)}
+              article={checkoutArticles}
+              salePrice={salePrice(checkoutArticles.priceList.price)}
+            />
+          </li>)
+      }
+      return articlesToDisplay;
+     } else {
+      return <p>{t("loading")}</p>
+     }
   };
 
-  useEffect(() => {
-    computeTotalSalePrice(articles);
-    computeTotalDiscount(articles);
-    computeTotalTaxes(articles);
-  }, [counter]);
+  useEffect(() => { 
+    const compute = async () => {
+    await computeTotalSalePrice();
+    await computeTotalDiscount();
+    await computeTotalTaxes();
+    }
+    compute();
+  }, [counter, dispatch]);
 
   // Idle functionality //
   const timeout = 60000;
@@ -216,9 +178,9 @@ const Checkout = () => {
                 </div>
                 <div className="fixed-bottom">
                   <PaymentBar
-                    total={total_value}
+                    total={totalSalePrice.toFixed(2)}
                     total_discount={discountTotal}
-                    total_taxes={total_taxes}
+                    total_taxes={totalTaxValue.toFixed(2)}
                   />
                 </div>
               </div>

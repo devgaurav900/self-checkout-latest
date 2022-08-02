@@ -22,22 +22,16 @@ const Login = () => {
     setUsers({ ...users, [e.target.name]: e.target.value });
   };
 
-  const submitHandler = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    await _userSignIn(dispatch, users);
-    if(users.username === 'kunal' && users.password === 'kunal000'){
-      console.log(users);
-      addUserName(users)
-      navigate("/register");
-    } else {
-      alert('Please enter the valid credentials !!!')
-    }
+    const isLogin = await _userSignIn(dispatch, users);
+    if (isLogin) navigate('/register');
   };
-  
-const addUserName = (users) => {
-  setUsers(users);
-localStorage.setItem('userName' , JSON.stringify(users.username))
-}
+
+  const addUserName = (users) => {
+    setUsers(users);
+    localStorage.setItem("userName", JSON.stringify(users.username));
+  };
 
   return (
     <Fragment>
@@ -60,7 +54,7 @@ localStorage.setItem('userName' , JSON.stringify(users.username))
                 <h2>Welcome Back</h2>
               </div>
 
-              <form type="form" onSubmit={submitHandler}>
+              <form type="form">
                 <div className="login-main">
                   <div className="login-box pb-3 userId">
                     <div className="login-icon">
@@ -88,7 +82,7 @@ localStorage.setItem('userName' , JSON.stringify(users.username))
                   </div>
 
                   <div className="login-btn text-center submit">
-                    <button type="submit">LOGIN</button>
+                    <button type="submit" onClick={handleSubmit} >LOGIN</button>
                   </div>
                   <div className="login-image">
                     <img src={Vector6} alt="vector" />
