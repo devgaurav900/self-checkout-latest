@@ -12,6 +12,7 @@ import { useTranslation } from "react-i18next";
 import { _setCheckoutTotal } from "../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 import { _getCheckoutArticle } from "../redux/actions";
+import { getCheckoutArticle } from "../redux/services";
 
 const Checkout = () => {
   const [transactions, setTransactions] = useState([]);
@@ -75,16 +76,25 @@ const Checkout = () => {
   };
 
   useEffect(() => {
-    _getCheckoutArticle(dispatch);
+    const getCheckoutArticle = async () => {
+      await _getCheckoutArticle(dispatch);
+      console.log('counter', counter)
+    }
+    getCheckoutArticle()
+    // const numberOfArticles = localStorage('numberOfArticles')
+    // if (numberOfArticles) {
+    //   if (counter !== numberOfArticles) localStorage.setItem('numberOfArticles', counter);
+    // }
   }, [dispatch]);
 
   // Bar Code Scanner
   const onBarcodeChange = async (event) => {
     const newValue = event.target.value;
     setGetBarcode(newValue); 
-    if (newValue == checkoutArticles.id) {
+    if (newValue == checkoutArticles.id && newValue !== '' && newValue !== null && newValue !== undefined) {
       setCounter(counter + 1);
       await computeTotalSalePrice()
+      setTimeout(()=> setGetBarcode(''), 290)
     };
   };
 

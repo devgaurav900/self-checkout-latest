@@ -22,7 +22,7 @@ const DropItems = () => {
     event.preventDefault()
     const newValue = event.target.value;
     setGetBarcode(newValue);
-    if (newValue == checkoutArticles.id) navigate("/checkout");
+    if (newValue == checkoutArticles.id && newValue !== '' && newValue !== null && newValue !== undefined) navigate("/checkout");
   };
 
   return (
